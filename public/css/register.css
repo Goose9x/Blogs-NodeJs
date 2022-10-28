@@ -1,0 +1,73 @@
+body {
+    background-image: url('https://getwallpapers.com/wallpaper/full/e/5/4/60111.jpg');
+    font-family: 'Oxygen', sans-serif;
+    color: #fff !important;
+}
+
+p {
+    margin: 0 !important;
+}
+
+.main {
+    margin-top: 25px;
+}
+
+.title {
+    font-size: 50px;
+    font-family: 'Passion One', cursive;
+    font-weight: 400;
+    color: #fff;
+}
+
+hr {
+    width: 10%;
+    color: #000;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 13px;
+    padding-top: 3px;
+}
+
+.main-login {
+    background-color: #00000080;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.main-center {
+    margin: 0 auto;
+    max-width: 450px;
+    padding: 40px 40px;
+
+}
+
+.login-button {
+    margin-top: 15px;
+    background-color: #ff7112 !important;
+    color: black !important;
+    list-style: none;
+    text-decoration: none;
+}
+
+.message {
+    color: #fff;
+    text-shadow: 1px 1px 2px red;
+    padding-left: 50px;
+    font-weight: bold;
+}
+
+.input-group-addon {
+    background-color: #ff7112 !important;
+    color: black !important;
+}

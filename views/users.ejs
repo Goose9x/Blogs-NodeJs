@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <style>
+        td {
+            word-break: break-word;
+        }
+
+        .action {
+            width: 130px;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 30px 0 !important;
+        }
+
+        .password {
+            width: 300px;
+        }
+
+        .edit {
+            color: yellow;
+        }
+
+        input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgb(72, 72, 72);
+            color: white;
+            width: 100px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav nav-tabs navbar-dark bg-dark">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Users Panel</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link blog-panel-btn" href="#">Blogs Panel</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link signout-btn" href="#">Logout</a>
+        </li>
+    </ul>
+
+
+
+    <div class="container">
+        <div class="row">
+            <h2>Users Panel</h2>
+        </div>
+    </div>
+
+    <div class="container" style="padding: 0;">
+        <div class="message">
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <table class="table table-dark table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Website</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col password">Password</th>
+                        <th scope="col password">Role</th>
+                        <th scope="col action">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <% for( let i=0; i < data.length; i++ ) { %>
+                        <tr>
+                            <th scope="row">
+                                <%= i + 1 %>
+                            </th>
+                            <td>
+                                <%= data[i].id %>
+                            </td>
+                            <td>
+                                <%= data[i].name %>
+                            </td>
+                            <td>
+                                <%= data[i].username %>
+                            </td>
+                            <td>
+                                <%= data[i].email %>
+                            </td>
+                            <td>
+                                <%= data[i].website %>
+                            </td>
+                            <td>
+                                <%= data[i].phone %>
+                            </td>
+                            <td class="password">
+                                <%= data[i].password %>
+                            </td>
+                            <td>
+                                <%= data[i].role %>
+                            </td>
+                            <td class="action">
+                                <span id="<%= data[i].id %>" class="btn-delete btn btn-danger">
+                                    <ion-icon name="trash-outline"></ion-icon>
+                                </span>
+                                <span id="udpate-<%= data[i].id %>" class="btn-update btn btn-info">
+                                    <ion-icon name="build-outline"></ion-icon>
+                                </span>
+                            </td>
+                        </tr>
+                        <% } %>
+
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link pre-btn"
+                            href="/users?page_size=<%= page_size %>&page_index=<%= page_index - 1 %>"
+                            aria-label="Previous">
+                            Previous
+                        </a>
+                    </li>
+                    <% for( let i=1; i <=Math.ceil(total/page_size); i++ ) { %>
+                        <li class="page-item"><a class="page-link"
+                                href="/users?page_size=<%= page_size %>&page_index=<%= i %>">
+                                <%= i %>
+                            </a></li>
+                        <% } %>
+                            <li class="page-item">
+                                <a class="page-link next-btn"
+                                    href="/users?page_size=<%= page_size %>&page_index=<%= page_index + 1 %>"
+                                    aria-label="Next">
+                                    Next
+                                </a>
+                            </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js
+    "></script>
+    <script src="/js/user.js"></script>
+</body>
+
+</html>
